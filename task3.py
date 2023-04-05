@@ -14,14 +14,30 @@ users = ["annie","betty","charles","doug","eddie","flon"]
 passwords = ["12345","password","iloveyou","mom","default","0"]
 
 
+while True:
+    user = input("Enter a username: ")
 
-user = input("Enter a username: ")
+    if user in users:
+        break
+    
+    else:
+        print("Acess denied")
+
 for i in users:
     if i == user: 
         passnum = users.index(user)
         password = input("Enter a password: ")
+
         if password == passwords[passnum]:
             print("Acess granted!")
+
         else:
             print("Acess denied")
+            exit()
+
+    if i != user:
+        print("Acess denied")
+        exit()
+
+
 
